@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Form category</h1>
+    <form th:action="@{/api/categories}" method="post" th:object="${category}">
+        <label><input type="text" th:field="*{id}" hidden></label>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" th:field="*{name}"
+                   id="name" placeholder="New name classroom">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a th:href="@{/api/categories}" class="btn btn-info">Back</a>
+    </form>
+</div>
+</body>
+</html>
